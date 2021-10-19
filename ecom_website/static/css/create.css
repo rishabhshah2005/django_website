@@ -1,0 +1,57 @@
+body{
+    background: url(/static/images/create_back.png) no-repeat center center fixed #000; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
+}
+.background {
+    background: none repeat scroll 0 0 #FFFFFF;
+    height: 200%;
+    left: -50%;
+    position: fixed;
+    width: 200%;}
+
+.background img{
+    bottom: 0;
+    display: block;
+    left: 0;
+    margin: auto;
+    min-height: 50%;
+    min-width: 50%;
+    right: 0;
+    top: 0;}
+
+.container{
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    margin-top: 50px;
+    color: black;
+    
+}
+
+
+.input-field{
+    color: black !important;
+}
+
+.input-field input[type=text] + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: black !important;
+   }
+   
+.input-field input[type=text], .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid black !important;
+    box-shadow: 0 1px 0 0 black !important;
+   }
+   
+   
+.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #3b3333 !important;
+   }
+   
+.input-field input[type=text]:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #3b3333 !important;
+    box-shadow: 0 1px 0 0 #3b3333 !important;
+   }
+
+

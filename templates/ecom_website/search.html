@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel='stylesheet' href='{% static "css/img_size.css" %}'> 
+{% block content %}
+
+
+<div class="container">
+
+    <br>
+    <div class="container">
+        <div class='boxed'>
+            <form style="color: #ffffff" action="search" method="post">
+                {% csrf_token %}
+                <input type="search" name="search" placeholder="search">
+                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <br>
+
+    
+        <div class="row">
+            {% for result in results %}
+
+                <div class="row">
+                    <div class="col s4">
+                        <div class="card">
+                            <div class="card-image">
+                                <a href=""><img src="{{ result.photo.url |cut:'ecom_website/' }}" class='' alt="/" height=200px, width=300px></a>
+                            </div>
+                            <div class="card-content">
+                                <p>{{ result.name }}</p>
+                                
+                            </div>
+                            <div class="card-action">
+                                <a href="search/{{result.id}}">₹{{ result.price }}</a>
+                            </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    
+
+
+</div>
+
+{% endblock content %}

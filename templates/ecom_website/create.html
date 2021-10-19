@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<link rel='stylesheet' href="{% static "css/create.css" %}">
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    M.FormSelect.init(elems);
+  });
+
+</script>
+
+<div class="container" padding=20px>
+    <div class="row" background-color=#FF0000>
+
+        <h1 align='center'>Post Your Product</h1>
+
+        <form action='create' method='post' enctype='multipart/form-data'>
+        {% csrf_token %}
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="name" type="text" class="validate" maxlength='100'>
+                    <label for="name">Enter Name of Product</label>
+                </div>
+            </div>
+
+            <div class="row"> 
+                <div class="input-field col s12">
+                    <textarea name="description" class="materialize-textarea" maxlength='1000'></textarea>
+                    <label for="description">Description</label>
+                </div>
+            </div>
+
+            <div class='row'>
+
+                <div class="input-field col s4">
+                    <i class="material-icons prefix">phone</i>
+                    <input name="phone" type="tel" class="validate" maxlength='10'>
+                    <label for="phone">Contact Number</label>
+                </div>
+
+                <div class="input-field col s3">
+                    <input name="price" type="text" class="validate" maxlength='15'>
+                    <label for="price">Price</label>
+                </div>
+
+                <div class="input-field col s3">
+                    <select name="choice" id="choice">
+                        <option value="G">General</option>
+                        <option value="VG">Vegetables</option>
+                        <option value="FT">Fruits</option>
+                        <option value="GR">Groceries</option>
+                        <option value="HG">Hygiene</option>
+                        <option value="GR">Grooming</option>
+                        <option value="CL">Clothing</option>
+                    </select>
+                    <label>Category</label>
+                </div>
+
+            </div>
+            <div class='row'>
+
+                <div class="file-field input-field col s6">
+                    <div class="btn">
+                        <span><i class="material-icons left">file_upload</i>Image</span>
+                        <input type="file" name='photo' accept=".png, .jpg">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text" name='filename'>
+                    </div>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="owner" type="text" class="validate" maxlength='100'>
+                    <label for="owner">Enter Your name</label>
+                </div>
+            
+            </div>
+
+            <div class='row'>
+                <div class='col s12' align='center'>
+                <button class="waves-effect waves-light btn-large" type="submit" name="action">Submit
+                
+                </button>
+                </div>
+            </div>
+
+        </form>
+            
+    </div>
+
+</div>
+
+
+
+{% endblock content %}
